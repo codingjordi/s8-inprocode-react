@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
     return (
-        <header>
+        <header className='w-full flex items-center justify-around'>
             <div>
                 <h1>Inpro App</h1>
             </div>

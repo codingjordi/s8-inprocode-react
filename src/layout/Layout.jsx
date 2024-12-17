@@ -8,7 +8,6 @@ export default function Layout () {
       <div>
         <Navbar />
       </div>
-
       <div className="" >
         <Outlet />
       </div>
