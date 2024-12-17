@@ -13,11 +13,13 @@ useEffect(() => {
   return (
     <div>
       <h1>Tasks</h1>
+      <div className="">
       {tasks.length === 0 ? 'No tasks yet' : tasks.map(task => {
         return(
           <TaskCard task={task} key={task.id} />
         );
       })}
+      </div>
     </div>
   )
 }
