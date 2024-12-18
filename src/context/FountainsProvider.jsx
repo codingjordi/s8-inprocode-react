@@ -4,7 +4,7 @@ import { getFountainsRequest } from '../api/fountains.api'
 
 export default function FountainsProvider( { children }) {
 
-    const [fountains, setFountains] = useState(null)
+    const [fountains, setFountains] = useState([]);
 
     const loadFountains = async () => {
         try {

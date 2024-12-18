@@ -4,17 +4,18 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { useFountains } from '../hooks/useFountains';
 
 export default function MapComponent() {
+  const { loadFountains, fountains } = useFountains()
+
   const [viewport, setViewport] = useState({
     latitude: 41.389321,
-    longitude: 2.163477 ,
+    longitude: 2.163477,
     zoom: 13
   });
 
   useEffect(() => {
     loadFountains();
-  }, []); 
+  }, []);
 
-  const { loadFountains, fountains } = useFountains()
 
   return (
     <div>
@@ -22,23 +23,31 @@ export default function MapComponent() {
       <Map
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
         initialViewState={viewport}
-        style={{width: '100vw', height: '100vh'}}
-        mapStyle="mapbox://styles/mapbox/streets-v12"
+        style={{ width: '100vw', height: '100vh' }}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
       >
 
-      
-      {console.log('Fountains: ', fountains)}
+        {console.log(fountains[0])}
+        {console.log('Fountains: ', fountains)}
 
-        {fountains.map(fountain => {
-          return (
-            <Marker key={fountain.id}
-          latitude={fountain.latitude} 
-          longitude={fountain.longitude}
+        <Marker
+          key="testMarker"
+          latitude={41.389321}
+          longitude={2.163477}
         >
           📍
         </Marker>
-          )
-        })}
+
+        {fountains && fountains.map(fountain => (
+          <Marker
+            key={fountain.ID} // El id sigue siendo único para cada marcador
+            longitude={fountain.LONGITUDE}
+            latitude={fountain.LATITUDE}
+          >
+            <h2>📍</h2>
+          </Marker>
+        ))}
+
 
       </Map>
     </div>
