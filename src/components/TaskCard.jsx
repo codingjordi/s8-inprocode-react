@@ -16,8 +16,8 @@ export default function TaskCard({ task }) {
                 <h2>{task.title}</h2>
                 <p>{task.description}</p>
             
-                <div>
-                <span>
+                <div className="flex gap-3">
+                <span className='font-medium'>
                     {new Date(task.createdAt).toLocaleDateString("es-ES", {
                         year: "numeric",
                         month: "long",

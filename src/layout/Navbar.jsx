@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
     return (
-        <header className='w-full flex items-center justify-around'>
+        <header className='w-full flex items-center justify-between'>
             <div>
                 <h1>Inpro App</h1>
             </div>
@@ -12,13 +12,13 @@ export default function Navbar() {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/new">Map</Link>
+                        <Link to="/map">Map</Link>
                     </li>
                     <li>
-                        <Link to="/new">Calendar</Link>
+                        <Link to="/calendar">Calendar</Link>
                     </li>
                     <li>
-                        <Link to="/new">Graphics</Link>
+                        <Link to="/graphics">Graphics</Link>
                     </li>
                 </ul>
             </nav>

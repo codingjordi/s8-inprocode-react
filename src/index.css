@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  h1{
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
   h2 {
     font-size: 2rem;
     font-weight: 600;
@@ -35,7 +40,6 @@ a:hover {
 
 body {
   margin: 0 1rem;
-  display: flex;
   min-width: 320px;
   min-height: 100vh;
 }
