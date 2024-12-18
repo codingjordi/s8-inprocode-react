@@ -1,6 +1,6 @@
 
 export const getFountainsRequest = async () => {
-    return await fetch('http://localhost:4000/fountains')
+    return await fetch('https://main.d1udmiicb2cjk1.amplifyapp.com/fountains')
 }
 
 
