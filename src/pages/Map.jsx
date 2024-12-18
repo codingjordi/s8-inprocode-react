@@ -29,7 +29,7 @@ export default function MapComponent() {
       
       {console.log('Fountains: ', fountains)}
 
-        {/* {fountains.map(fountain => {
+        {fountains.map(fountain => {
           return (
             <Marker key={fountain.id}
           latitude={fountain.latitude} 
@@ -38,7 +38,7 @@ export default function MapComponent() {
           📍
         </Marker>
           )
-        })} */}
+        })}
 
       </Map>
     </div>
