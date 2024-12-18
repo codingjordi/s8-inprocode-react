@@ -20,7 +20,7 @@ export default function MapComponent() {
     <div>
       <h1>Map ⛲️</h1>
       <Map
-        mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
+        mapboxAccessToken={import.meta.env.MAPBOX_TOKEN}
         initialViewState={viewport}
         style={{width: '100vw', height: '100vh'}}
         mapStyle="mapbox://styles/mapbox/streets-v12"
