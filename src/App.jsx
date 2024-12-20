@@ -8,6 +8,7 @@ import { TaskContextProvider } from './context/TaskProvider'
 import Graphics from './pages/Graphics.jsx'
 import Map from './pages/Map.jsx'
 import FountainsProvider from './context/FountainsProvider.jsx'
+import FullCalendar from './components/FullCalendar.jsx'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/edit/:id" element={<TaskForm />} />
             <Route path="/graphics" element={<Graphics />} />
             <Route path='/map' element={<Map />} />
+            <Route path='/calendar' element={<FullCalendar />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

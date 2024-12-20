@@ -1,10 +1,11 @@
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import { initialData } from '../initialData.js'
 import {
     Chart as ChartJS,
     CategoryScale,
     LinearScale,
-    BarElement,
+    PointElement,
+    LineElement,
     Title,
     Tooltip,
     Legend
@@ -14,17 +15,18 @@ import {
 ChartJS.register(
     CategoryScale,
     LinearScale,
-    BarElement,
+    PointElement,
+    LineElement,
     Title,
     Tooltip,
     Legend
 )
 
-export default function LineGraph() {
+export default function BarGraph() {
 
   return (
     <div>
-      <Line data={initialData} options={{}}/>
+      <Bar data={initialData} options={{}}/>
     </div>
   )
 }

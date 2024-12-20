@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
-export default function Navbar() {
+export default function Header() {
     return (
-        <header className='w-full flex items-center justify-between'>
-            <div>
-                <h1>Inpro App</h1>
+        <header className='w-full px-2 md:px-4 lg:px-8  flex items-center justify-between'>
+            <div className='text-5xl font-semibold'>
+                Inpro App
             </div>
             <nav >
                 <ul className='flex'>
