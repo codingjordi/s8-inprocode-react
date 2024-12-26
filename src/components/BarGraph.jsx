@@ -1,5 +1,4 @@
 import { Bar } from 'react-chartjs-2';
-import { initialData } from '../initialData.js'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -22,11 +21,11 @@ ChartJS.register(
     Legend
 )
 
-export default function BarGraph() {
+export default function BarGraph({ data }) {
 
   return (
     <div>
-      <Bar data={initialData} options={{}}/>
+      <Bar data={data} options={{}}/>
     </div>
   )
 }

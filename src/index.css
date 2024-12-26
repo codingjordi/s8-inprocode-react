@@ -67,15 +67,35 @@
   }
 }
 
+/* calendar.css */
+
+:root {
+  /* FullCalendar custom properties */
+  --fc-border-color: rgba(0, 0, 0, 0.1); /* Define a soft border color */
+  --fc-border-radius: 12px; /* Round the corners of the calendar */
+  --fc-font-family: 'Inter', sans-serif; /* Optional: customize the font */
+  --fc-day-number-color: #000000; /* Numbers in black */
+  --fc-day-number-font-weight: bold; /* Bold font for day numbers */
+}
+
+.fc {
+  border-radius: var(--fc-border-radius); /* Apply rounded corners */
+  border: 1px solid var(--fc-border-color); /* General border */
+  overflow: hidden; /* Ensure inner content stays within rounded corners */
+}
+
+.fc-daygrid-day-number {
+  color: var(--fc-day-number-color); /* Apply black color to day numbers */
+  font-weight: var(--fc-day-number-font-weight); /* Bold text */
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -92,14 +112,8 @@ a:hover {
 }
 
 body {
-  margin: 0 1rem;
   min-width: 320px;
   min-height: 100dvh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -122,7 +136,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -133,13 +147,13 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }

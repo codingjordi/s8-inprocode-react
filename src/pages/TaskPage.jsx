@@ -11,9 +11,9 @@ export default function TaskPage() {
   }, [])
 
   return (
-    <div className="flex flex-col items-center my-6">
+    <div className="flex flex-col items-center my-6 px-5">
       <h1>Tasks</h1>
-      <div className="flex flex-col-reverse gap-6 md:w-3/4 my-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid- gap-6 my-5">
         {tasks.length === 0 ? 'No tasks yet' : tasks.map(task => {
           return (
             <TaskCard task={task} key={task.id} />

@@ -21,6 +21,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
+    "flowbite": "^2.5.2",
     "formik": "^2.4.6",
     "lucide-react": "^0.468.0",
     "mapbox-gl": "^3.9.0",

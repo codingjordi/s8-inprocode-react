@@ -1,5 +1,4 @@
 import { Line } from 'react-chartjs-2';
-import { initialData } from '../initialData.js'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -20,11 +19,11 @@ ChartJS.register(
     Legend
 )
 
-export default function LineGraph() {
+export default function LineGraph({ data }) {
 
   return (
     <div>
-      <Line data={initialData} options={{}}/>
+      <Line data={data} options={{}}/>
     </div>
   )
 }

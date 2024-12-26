@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: ["class"],
-    content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
+    darkMode: "class",
+    content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}", "./node_modules/flowbite/**/*.{js,jsx }"],
   theme: {
   	extend: {
+		height: {
+			'outlet': 'calc(100dvh - 62px)',
+		  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -53,5 +56,5 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('flowbite/plugin')],
 }
