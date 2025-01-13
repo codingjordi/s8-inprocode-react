@@ -24,9 +24,9 @@ export default function ThemeToggler() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 bg-gray-200 dark:bg-gray-800 rounded-full"
+      className="text-xl px-2 py-1 bg-gray-800 dark:bg-gray-100 rounded-full"
     >
-      {theme === 'dark' ? '☀️' : '🌙' }
+      {theme === 'dark' ? '🌞' : '🌙' }
     </button>
   );
 }

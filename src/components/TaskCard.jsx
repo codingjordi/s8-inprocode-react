@@ -34,7 +34,7 @@ export default function TaskCard({ task }) {
             <div className="flex gap-2 pt-3 h-15">
                 <button className='dark:text-zinc-50 bg-gray-100 dark:bg-zinc-800 text-black px-4 py-2 rounded-lg font-semibold text-center transition duration-300 ease-in-out hover:bg-gray-300 dark:hover:bg-zinc-900' onClick={() => deleteTask(task.id)}>Delete</button>
                 <button className='dark:text-zinc-50 bg-gray-100 dark:bg-zinc-800 text-black px-4 py-2 rounded-lg font-semibold text-center transition duration-300 ease-in-out hover:bg-gray-300 dark:hover:bg-zinc-900' onClick={() => navigate(`/edit/${task.id}`)}>Edit</button>
-                <button className='dark:text-zinc-50 bg-gray-100 dark:bg-zinc-800 text-black px-4 py-2 rounded-lg font-semibold text-center transition duration-300 ease-in-out hover:bg-gray-300 dark:hover:bg-zinc-900' onClick={() => handleDone(task.done)}>Check task</button>
+                <button className='dark:text-zinc-50 bg-gray-100 dark:bg-zinc-800 text-black px-4 py-2 rounded-lg font-semibold text-center transition duration-300 ease-in-out hover:bg-gray-300 dark:hover:bg-zinc-900' onClick={() => handleDone()}>Check task</button>
             </div>
         </div>
     )

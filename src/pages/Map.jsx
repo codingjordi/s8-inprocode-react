@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useFountains } from '../hooks/useFountains';
@@ -12,29 +12,26 @@ export default function MapComponent() {
    zoom: 14,
  });
 
- const [selectedFountain, setSelectedFountain] = useState({});
- const [showPopup, setShowPopup] = useState(false);
-
+ const [selectedFountain, setSelectedFountain] = useState(null);
 
  useEffect(() => {
    loadFountains();
  }, []);
 
- const handleSelectedFountain = (fountain) => {
+ const handleSelectedFountain = useCallback((fountain) => {
    if (fountain.LATITUDE && fountain.LONGITUDE) {
      setSelectedFountain(fountain);
-     setShowPopup(true);
-     console.log('Selected fountain: ', selectedFountain);
+     console.log('Selected fountain: ', fountain);
    }
- };
+ }, []);
 
  return (
-   <div className=''>
+   <div className='w-full h-screen'>
      <h1 className='text-center'>Map ⛲️</h1>
      <Map
        mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
        initialViewState={viewport}
-       style={{ width: '100dvw', height: '100dvh' }}
+       style={{ width: '100%', height: 'calc(100% - 40px)' }}
        mapStyle="mapbox://styles/mapbox/streets-v9"
      >
        {fountains &&
@@ -53,14 +50,14 @@ export default function MapComponent() {
            </Marker>
          ))}
 
-       {selectedFountain && showPopup && (
+       {selectedFountain && (
          <Popup
-           latitude={selectedFountain.LATITUDE}
-           longitude={selectedFountain.LONGITUDE}
-           onClose={() => setShowPopup(false)}
+           latitude={parseFloat(selectedFountain.LATITUDE)}
+           longitude={parseFloat(selectedFountain.LONGITUDE)}
+           onClose={() => setSelectedFountain(null)}
+           closeOnClick={false}
            anchor='bottom'
            className="z-50"
-           onOpen={() => setShowPopup(true)}
          >
            <div className="bg-white p-2">
              <h3>Fountain Details</h3>
@@ -73,3 +70,4 @@ export default function MapComponent() {
    </div>
  );
 }
+

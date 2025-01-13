@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply transition-colors duration-75;
+}
+
 @layer base {
   h1{
     font-size: 3rem;
@@ -69,17 +73,10 @@
 
 /* calendar.css */
 
-:root {
-  /* FullCalendar custom properties */
-  --fc-border-color: rgba(0, 0, 0, 0.1); /* Define a soft border color */
-  --fc-border-radius: 12px; /* Round the corners of the calendar */
-  --fc-font-family: 'Inter', sans-serif; /* Optional: customize the font */
-  --fc-day-number-color: #000000; /* Numbers in black */
-  --fc-day-number-font-weight: bold; /* Bold font for day numbers */
-}
+
 
 .fc {
-  border-radius: var(--fc-border-radius); /* Apply rounded corners */
+  border-radius: 6px; /* Apply rounded corners */
   border: 1px solid var(--fc-border-color); /* General border */
   overflow: hidden; /* Ensure inner content stays within rounded corners */
 }
@@ -87,6 +84,10 @@
 .fc-daygrid-day-number {
   color: var(--fc-day-number-color); /* Apply black color to day numbers */
   font-weight: var(--fc-day-number-font-weight); /* Bold text */
+}
+
+.fc-media-screen { /* Estilos contenedor header + calendar grid */
+  border: none;
 }
 
 
@@ -151,9 +152,9 @@ button:focus-visible {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border duration-0;
   }
   body {
-    @apply text-foreground;
+    @apply text-foreground duration-0;
   }
 }
