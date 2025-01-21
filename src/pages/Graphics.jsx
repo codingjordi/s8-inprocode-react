@@ -29,7 +29,7 @@ export default function Graphics() {
   };
 
   return (
-    <div className="flex flex-col items-center my-6 px-4 max-w-screen-lg mx-auto">
+    <div className="flex flex-col items-center my-6 px-4 max-w-screen-lg mx-auto bg-white dark:bg-zinc-800">
       <h1 className="text-center text-2xl font-bold mb-4">Graphics</h1>
       <div className="w-full flex flex-col items-center">
         <h2 className="text-lg font-semibold mb-4">Financial Reports</h2>

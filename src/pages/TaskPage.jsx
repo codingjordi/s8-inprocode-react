@@ -17,7 +17,7 @@ export default function TaskPage() {
   }, [])
 
   return (
-    <div className="flex flex-col items-center  justify-center my-6 max-w-screen-xl mx-auto bg-white dark:bg-zinc-800">
+    <div className="flex flex-col items-center  justify-center my-6 px-4 lg:px-6 max-w-screen-xl mx-auto bg-white dark:bg-zinc-800">
       <div className="flex flex-row items-center justify-between w-full">
         <h1 className="">Tasks</h1>
         <div className="flex justify-end gap-2 lg:gap-4">
