@@ -23,10 +23,22 @@ export default function Calendar() {
   const [isNewEvent, setIsNewEvent] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [headerToolbarLeft, setHeaderToolbarLeft] = useState("prev,next today");
 
   useEffect(() => {
     fetchEvents();
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleResize = () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      setHeaderToolbarLeft("prev,next");
+    } else {
+      setHeaderToolbarLeft("prev,next today");
+    }
+  };
 
   const fetchEvents = async () => {
     try {
@@ -121,7 +133,7 @@ export default function Calendar() {
   };
 
   return (
-    <div className="flex flex-col-reverse md:flex-row">
+    <div className=" flex flex-col-reverse md:flex-row bg-white dark:bg-zinc-800">
       <div className="md:block md:w-3/12">
         <div className="py-10 text-2xl font-extrabold px-7">Calendar Events</div>
         <ul className="space-y-4">
@@ -152,7 +164,7 @@ export default function Calendar() {
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{
-            left: "prev,next today",
+            left: headerToolbarLeft,
             center: "title",
             right: "dayGridMonth,timeGridWeek,timeGridDay",
           }}
@@ -288,4 +300,3 @@ export default function Calendar() {
     </div>
   );
 }
-

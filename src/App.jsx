@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import TaskForm from './pages/TaskForm.jsx'
+import TaskForm from './components/TaskForm.jsx'
 import './App.css'
 import TaskPage from './pages/TaskPage.jsx'
 import NotFound from './pages/NotFound'

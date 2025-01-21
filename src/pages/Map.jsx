@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useFountains } from '../hooks/useFountains';
+import '../index.css'
 
 export default function MapComponent() {
  const { loadFountains, fountains } = useFountains();
@@ -57,10 +58,12 @@ export default function MapComponent() {
            onClose={() => setSelectedFountain(null)}
            closeOnClick={false}
            anchor='bottom'
-           className="z-50"
+           className="text-zinc-700"
          >
-           <div className="bg-white p-2">
-             <h3>Fountain Details</h3>
+           <div className="h-full w-full p-2">
+             <h3 className='text-lg font-bold'>Fountain Details</h3>
+             <p>{selectedFountain.NAME == 'nan' ? '' : selectedFountain.NAME}</p>
+             <p>{selectedFountain.STREET}, {selectedFountain.STREET_NUMBER == 'nan' ? '' : selectedFountain.STREET_NUMBER}</p>
              <p>Latitude: {selectedFountain.LATITUDE}</p>
              <p>Longitude: {selectedFountain.LONGITUDE}</p>
            </div>
