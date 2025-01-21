@@ -21,7 +21,7 @@ export default function TaskPage() {
       <div className="flex flex-row items-center justify-between w-full">
         <h1 className="">Tasks</h1>
         <div className="flex justify-end gap-2 lg:gap-4">
-          <input type="text" placeholder="Comprar..." className="rounded-full w-2/5 lg:w-full" />
+          <input type="text" placeholder="Comprar..." className="rounded-full w-2/5" />
           <Link to='/new'>
             <button className="flex items-center h-12">
               <svg className="me-2" xmlns="http://www.w3.org/2000/svg" height="18" width="15" viewBox="0 0 448 512"><path fill="#ffffff" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" /></svg>
